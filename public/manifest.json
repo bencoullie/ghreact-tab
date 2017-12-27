@@ -1,15 +1,24 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+  "short_name": "Ghreact",
+  "name": "React Extension",
+  "description": "A simple chrome addon to see how many code reviews a person has been assigned to.",
+  "manifest_version": 2,
+  "icons": {
+    "16": "images/green-gh-16.png",
+    "48": "images/green-gh-48.png",
+    "128": "images/green-gh-128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/green-gh-128.png",
+    "default_popup": "index.html",
+    "default_title": "React Ext"
+  },
+  "version": "1.0",
+  "permissions": [
+    "management",
+    "tabs"
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
 }
