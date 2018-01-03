@@ -5,3 +5,9 @@
   align-items: center;
   justify-items: center; /* adjusted */
 }
+
+.simpleAPI-wrapper h1 {
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: 300;
+  font-size: 56px;
+}
