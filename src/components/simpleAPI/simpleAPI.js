@@ -2,15 +2,19 @@ import './simpleAPI.css'
 
 import React, { Component } from 'react'
 
-const config = {
-  mode: 'no-cors' // 'cors' by default
-}
-
 class SimpleAPI extends Component {
-  componentWillMount () {
-    fetch('http://itsthisforthat.com/api.php?json', config).then(response => {
+  constructor () {
+    super()
+    this.state = {
+      fact: ''
+    }
+  }
+
+  componentDidMount () {
+    fetch('http://ron-swanson-quotes.herokuapp.com/v2/quotes').then(response => {
       response.json().then(data => {
-        console.log(data)
+        this.setState({ fact: data[0] })
+        document.getElementsByClassName('simpleAPI-wrapper')[0].classList.add('show')
       })
     })
   }
@@ -19,7 +23,7 @@ class SimpleAPI extends Component {
     return (
       <div className='simpleAPI-wrapper'>
         <div>
-          <h1>This should be centered</h1>
+          <h1>{this.state.fact}</h1>
         </div>
       </div>
     )
